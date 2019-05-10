@@ -17,11 +17,10 @@
                 var ts = data[a].ts;
                 var pew = data[a].pew; 
 
-                html += "<tr>";
-                    html += "<td>" + firstName + "</td>";
-                    html += "<td>" + lastName + "</td>";
-                    html += "<td>" + jobTitle + "</td>";
-                html += "</tr>";
+                html += "<div>";
+                    html += "<h1>" + ts + "</h1>";
+                    html += "<h2>" + pew + "</h2>"; 
+                html += "</div>";
             }
             document.getElementById("data").innerHTML += html;
         }
