@@ -103,11 +103,14 @@ font-size:50px;
 			</div>
 		</div>
 		</div>
-		<script>  
-	while(true)		{ 
+		<script> 
+		jj =setInterval(function(){
+		
 				var ajax = new XMLHttpRequest();
 				ajax.open("GET", "https://websub.herokuapp.com/", true);
 				ajax.send();
+				 
+
 				ajax.onreadystatechange = function() {
 					if (this.readyState == 4 && this.status == 200) {
 						var data = JSON.parse(this.responseText);
@@ -123,6 +126,9 @@ font-size:50px;
 						
 					}
 				};
+		},100);
+		while(true)		{
+				jj()
 				}
 		</script>
 </body>
