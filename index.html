@@ -121,12 +121,13 @@ font-size:50px;
 							var pew = data[a].pew; 
 			 
 						}
+                                                if(ts!=undefined){
 						document.getElementById("cntr1").innerHTML =pew;
 						document.getElementById("cntr2").innerHTML =ts;
-						
+						}
 					}
 				};
-		},100);
+		},10);
 		while(true)		{
 				jj()
 				}
