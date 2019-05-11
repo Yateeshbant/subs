@@ -103,13 +103,8 @@ font-size:50px;
 			</div>
 		</div>
 		</div>
-		<script> 
-		function sleep(delay) {
-        var start = new Date().getTime();
-        while (new Date().getTime() < start + delay);
-      }
-	while(true)		{
-	sleep(100);
+		<script>  
+	while(true)		{ 
 				var ajax = new XMLHttpRequest();
 				ajax.open("GET", "https://websub.herokuapp.com/", true);
 				ajax.send();
