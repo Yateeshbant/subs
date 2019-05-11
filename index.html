@@ -103,25 +103,27 @@ font-size:50px;
 			</div>
 		</div>
 		</div>
-		<script>
-			
-    var ajax = new XMLHttpRequest();
-    ajax.open("GET", "https://websub.herokuapp.com/", true);
-    ajax.send();
-    ajax.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var data = JSON.parse(this.responseText);
-            
-            var html = "";
-            for(var a = 0; a < data.length; a++) {
-                var ts = data[a].ts;
-                var pew = data[a].pew; 
- 
-            }
-            document.getElementById("cntr1").innerHTML =pew;
-			document.getElementById("cntr2").innerHTML =ts;
-			
-        }
-    };
+		<script> 
+while(true)		{
+await sleep(100);
+				var ajax = new XMLHttpRequest();
+				ajax.open("GET", "https://websub.herokuapp.com/", true);
+				ajax.send();
+				ajax.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						var data = JSON.parse(this.responseText);
+						
+						var html = "";
+						for(var a = 0; a < data.length; a++) {
+							var ts = data[a].ts;
+							var pew = data[a].pew; 
+			 
+						}
+						document.getElementById("cntr1").innerHTML =pew;
+						document.getElementById("cntr2").innerHTML =ts;
+						
+					}
+				};
+				}
 		</script>
 </body>
