@@ -1,10 +1,110 @@
-<!DOCTYPE html>
-<html>
-<head></head>
-<body>
-<div id="data"></div>
+<DOCTYPE html>
+<head>
+<title>practice</title>
+<meta charset="utf-8"/>
+<script			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous">
+			  </script>
+			  
+<script src="numcounter.js"></script>
 
-<script>
+<style>
+
+#ch1{
+background-image:url("https://yt3.ggpht.com/a/AGF-l79FVckie4j9WT-4cEW6iu3gPd4GivQf_XNSWg=s800-mo-c-c0xffffffff-rj-k-no");
+}
+#ch2{ 
+background-image:url("https://yt3.ggpht.com/a/AGF-l7_pAUMBrwUj9lIAPzwKL1MKmb9q875ck73n2Q=s800-mo-c-c0xffffffff-rj-k-no");
+}
+.icon{
+left:380px; 
+top:70px;
+height:100px;
+width:100px;
+position:relative;
+background-size:100px 100px;
+background-repeat:no-repeat;
+border-radius:50px;
+box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1), 0 2px 9px rgba(0, 0, 0, 0.24); 
+}
+.icon:hover{
+box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2), 0 5px 20px rgba(0, 0, 0, 0.24); 
+}
+#container{
+height:500px;
+background-color:red;
+padding:20px;
+}
+#box2{
+background-image:url("https://yt3.ggpht.com/_KTeW7gm6Nh3EYX42DvztSAROq2xcquGlLS1YbWTDPQ5ItejxRyOERiOz49QdHiTF43vorrn_8w=w2560-fcrop64=1,00005a57ffffa5a8-nd-c0xffffffff-rj-k-no");
+}
+#box1{
+background-image:url("https://yt3.ggpht.com/3Ss-aMQD695qaWBSWMy1mt6aNrIs5kIlL78Ccf_YGO4OHV1txzdWGy5J5bCUu7-T5MXJT3_W=w2560-fcrop64=1,00005a57ffffa5a8-nd-c0xffffffff-rj-k-no");
+}
+.box{
+background-repeat:no-repeat;
+height:500px;
+text-align:center;
+width:500px;
+background-color:white;
+background-size:500px 100px;
+box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1), 0 2px 9px rgba(0, 0, 0, 0.24); 
+}
+ 
+.channelname{
+font-size:50px;
+top:0px;
+}
+.counter{
+position:relative;
+left:100px;
+text-align:center;
+height:50px;
+width:300px;
+background-color:#f2f5f9;
+border-radius:5px;
+box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1), 0 2px 9px rgba(0, 0, 0, 0.24); 
+}
+
+.counter span{
+font-size:50px;
+}
+</style>
+</head>
+
+<body>
+	<div id="container"> 
+		<div class="box" id="box1" style="float:left">
+			
+			<div class='icon' id="ch1" >
+			</div>
+			<h2 class="channelname" id="chname1">
+				PewDiePie
+			</h2>
+			
+			<div class="counter" >
+				<span class='numscroller' id="cntr1" data-min='1' data-max='1000' data-delay='5' data-increment='10'>1000</span>
+			</div>
+		</div>
+		
+		
+		
+		<div class="box" id="box2" style="float:right">
+			
+			<div class='icon' id="ch2" >			
+			</div>
+			<h2 class="channelname" id="chname1">
+			T-series
+			</h2>
+			
+			<div class="counter" >
+				<span class='numscroller' id="cntr2" data-min='1' data-max='1000' data-delay='5' data-increment='10'>1000</span>
+			</div>
+		</div>
+		</div>
+		<script>
+			
     var ajax = new XMLHttpRequest();
     ajax.open("GET", "https://websub.herokuapp.com/", true);
     ajax.send();
@@ -16,16 +116,12 @@
             for(var a = 0; a < data.length; a++) {
                 var ts = data[a].ts;
                 var pew = data[a].pew; 
-
-                html += "<div>";
-                    html += "<h1>" + ts + "</h1>";
-                    html += "<h2>" + pew + "</h2>"; 
-                html += "</div>";
+ 
             }
-            document.getElementById("data").innerHTML += html;
+            document.getElementById("cntr1").innerHTML =pew;
+			document.getElementById("cntr2").innerHTML =ts;
+			
         }
     };
-</script>
-
+		</script>
 </body>
-</html>
